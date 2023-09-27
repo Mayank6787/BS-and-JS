@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+.top{
+    background-color: rgb(6, 199, 229);
+    text-align: center;
+    /* border: 2px solid red ; */
+}
+.section {
+    display: flex;
+    justify-content: center;
+}
+.right{
+    /* border: 2px solid red ; */
+    width: 80%;
+    height: 100vh;
+}
+.left{
+    /* border: 2px solid blue ; */
+    background-color: rgb(104, 104, 104);
+    color: white;
+    text-align: center;
+    width: 20%;
+    height: 100vh;
+}

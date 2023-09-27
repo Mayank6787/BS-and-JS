@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Date and Day Display</title>
+</head>
+<body>
+    <h1>Date and Time Display</h1>
+    
+    <!-- Paragraphs to display the date, day, and IST -->
+    <p id="currentDate"></p>
+    <p id="currentDay"></p>
+    <p id="currentTime"></p>
+    
+    <!-- Buttons to trigger date, day, and IST display -->
+    <button onclick="showDate()">Show Date</button>
+
+    <button onclick="showIST()">Show IST</button>
+
+    <script>
+        // Function to display the current date
+        function showDate() {
+            const currentDate = new Date();
+            const formattedDate = currentDate.toDateString();
+            document.getElementById("currentDate").textContent = `Current Date: ${formattedDate}`;
+        }
+
+ 
+
+        // Function to display the current IST
+        function showIST() {
+            const ISTOffset = 5.5; // Indian Standard Time (IST) offset in hours
+            const currentDate = new Date();
+            const utc = currentDate.getTime() + (currentDate.getTimezoneOffset() * 60000);
+            const istTime = new Date(utc + (3600000 * ISTOffset));
+            const formattedIST = istTime.toLocaleTimeString('en-IN', { timeZoneName: 'short' });
+            document.getElementById("currentTime").textContent = `Current IST: ${formattedIST}`;
+        }
+    </script>
+</body>
+</html>
+
